@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="RulesNames">
+        <item>President</item>
+        <item>Vice of President</item>
+        <item>Head</item>
+        <item>Vice</item>
+        <item>Member</item>
+    </string-array>
+    <string-array name="Committees">
+        <item>Kwafel</item>
+        <item>Hyat Ensan</item>
+        <item>Academy</item>
+        <item>HR</item>
+        <item>PR</item>
+        <item>Mosa3dat</item>
+        <item>Media</item>
+    </string-array>
+</resources>

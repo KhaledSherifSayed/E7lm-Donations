@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "529401941342",
+    "firebase_url": "https://e7lm-donations.firebaseio.com",
+    "project_id": "e7lm-donations",
+    "storage_bucket": "e7lm-donations.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529401941342:android:18988c8cccd26b5b2293cf",
+        "android_client_info": {
+          "package_name": "com.meslmawy.ehlmdonations"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529401941342-58r6rahnfi3b3r505ua4132dt02nlvrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI9tMZG_4FrmhOc16-RTOVZQJ6bsAlcMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529401941342-58r6rahnfi3b3r505ua4132dt02nlvrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">E7lm Donations</string>
+    <string name="title_activity_circle_members_map">Map</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">log in</string>
+    <string name="dontaccount">"Don't have an account? "</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="join">join</string>
+    <string name="dialog_title">Exit</string>
+    <string name="dialog_message">Do you want to close this application</string>
+    <string name="haveaccount">Already have an account?</string>
+    <string name="firebase_email" translatable="false">khaledsherif296@gmail.com</string>
+    <string name="firebase_password" translatable="false">sherif2722036</string>
+
+</resources>
