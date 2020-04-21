@@ -1,149 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/skyblue">
+
+        <TextView
+            android:id="@+id/faded_signup_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:fontFamily="serif"
+            android:text="@string/sign_up"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/skyblue">
+            android:layout_below="@id/faded_signup_text"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/cardbackground"
+            android:padding="16dp">
 
-            <TextView
-                android:id="@+id/faded_signup_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="60dp"
-                android:fontFamily="serif"
-                android:text="@string/sign_up"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/linearlayoutsign"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/faded_signup_text"
-                android:layout_marginTop="70dp"
-                android:background="@drawable/cardbackground"
-                android:padding="16dp">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/linearlayoutsign"
+                <EditText
+                    android:id="@+id/name_edittext"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/email_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:textSize="14sp" />
 
-                    <EditText
-                        android:id="@+id/name_edittext"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:drawableStart="@drawable/ic_user"
-                        android:drawablePadding="10dp"
-                        android:hint="@string/name"
-                        android:inputType="text"
-                        android:textSize="14sp" />
+                <EditText
+                    android:id="@+id/password_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableStart="@drawable/ic_lock_black_24dp"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:textSize="14sp" />
 
-                    <EditText
-                        android:id="@+id/email_edittext"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableStart="@drawable/ic_email"
-                        android:drawablePadding="10dp"
-                        android:hint="@string/email"
-                        android:inputType="textEmailAddress"
-                        android:textSize="14sp" />
+                <HorizontalScrollView
+                    android:id="@+id/rulelist_scrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <EditText
-                        android:id="@+id/password_edittext"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableStart="@drawable/ic_lock_black_24dp"
-                        android:drawablePadding="10dp"
-                        android:hint="@string/password"
-                        android:inputType="textPassword"
-                        android:textSize="14sp" />
-
-                    <HorizontalScrollView
-                        android:id="@+id/rulelist_scrollview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.google.android.material.chip.ChipGroup
-                            android:id="@+id/rule_list"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:singleSelection="true"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_marginTop="8dp"
-                            app:singleLine="true"/>
-                    </HorizontalScrollView>
-
-                    <HorizontalScrollView
-                        android:id="@+id/Commitelist_scrollview"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/rule_list"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="gone">
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:singleLine="true"
+                        app:singleSelection="true" />
+                </HorizontalScrollView>
 
-                        <com.google.android.material.chip.ChipGroup
-                            android:id="@+id/committies_list"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:singleSelection="true"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_marginBottom="8dp"
-                            app:singleLine="true"/>
-                    </HorizontalScrollView>
-
-                    <Button
-                        android:id="@+id/signup_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="5dp"
-                        style="@style/MyButton"
-                        android:text="@string/sign_up"
-                        android:textAllCaps="false"
-                        android:textSize="@dimen/textsize_mlarge"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
+                <HorizontalScrollView
+                    android:id="@+id/Commitelist_scrollview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/linearlayoutsign"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center">
+                    android:visibility="gone">
 
-                    <TextView
-                        android:id="@+id/txt"
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/committies_list"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/haveaccount"
-                        android:textSize="16sp" />
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:singleLine="true"
+                        app:singleSelection="true" />
+                </HorizontalScrollView>
 
-                    <TextView
-                        android:id="@+id/signtolog_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_half"
-                        android:gravity="center"
-                        android:minHeight="@dimen/textsize_xxxlarge"
-                        android:text="@string/login"
-                        android:textColor="@color/skyblue"
-                        android:textSize="20sp" />
-                </LinearLayout>
-            </RelativeLayout>
+                <Button
+                    android:id="@+id/signup_button"
+                    style="@style/MyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/sign_up"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/textsize_mlarge"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearlayoutsign"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/haveaccount"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/signtolog_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_half"
+                    android:gravity="center"
+                    android:minHeight="@dimen/textsize_xxxlarge"
+                    android:text="@string/login"
+                    android:textColor="@color/skyblue"
+                    android:textSize="20sp" />
+            </LinearLayout>
         </RelativeLayout>
+    </RelativeLayout>
 </layout>

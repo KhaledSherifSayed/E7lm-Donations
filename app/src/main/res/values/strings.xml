@@ -13,5 +13,8 @@
     <string name="haveaccount">Already have an account?</string>
     <string name="firebase_email" translatable="false">khaledsherif296@gmail.com</string>
     <string name="firebase_password" translatable="false">sherif2722036</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="open" />
+    <string name="close" />
 
 </resources>
