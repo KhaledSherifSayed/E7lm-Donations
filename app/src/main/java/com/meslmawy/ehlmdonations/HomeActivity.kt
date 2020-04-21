@@ -3,6 +3,8 @@ package com.meslmawy.ehlmdonations
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
@@ -16,8 +18,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 import com.meslmawy.ehlmdonations.databinding.ActivityHomeBinding
-import com.meslmawy.ehlmdonations.ui.ProfileFragment
+import com.meslmawy.ehlmdonations.models.User
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -26,6 +29,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     var firebaseUser: FirebaseUser? = null
     var firebaseAuth: FirebaseAuth? = null
     var navController: NavController? = null
+    var current_uid: String? = null
+    var  mFirestore : FirebaseFirestore? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +39,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseUser = firebaseAuth!!.currentUser
         navController = Navigation.findNavController(this, R.id.nav_home_fragment)
+        current_uid = firebaseUser?.uid
+        mFirestore = FirebaseFirestore.getInstance()
         setupNavigation()
+        getHeaderData()
     }
 
     /**
@@ -104,6 +112,27 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+
+    private fun getHeaderData(){
+        val header = binding.navigationView.getHeaderView(0)
+        val nametextView = header.findViewById<TextView>(R.id.header_name_text)
+        val emailtextView = header.findViewById<TextView>(R.id.header_email_text)
+        val nameimageView = header.findViewById<TextView>(R.id.profile_image)
+        val userdocData = current_uid?.let { mFirestore?.collection("Users")?.document(it) }
+        userdocData?.get()?.addOnSuccessListener { documentSnapshot ->
+            val user = documentSnapshot.toObject(User::class.java)
+            if (user != null) {
+                val firstName =  "Hi ${user.firstName + " " + user.lastName}"
+                val abbrevName = user.firstName?.get(0).toString() + user.lastName?.get(0).toString()
+                nametextView.text = firstName
+                emailtextView.text = user.email
+                nameimageView.text = abbrevName
+            }
+        }?.addOnFailureListener {
+            Toast.makeText(this,it.message.toString(),Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

@@ -148,17 +148,19 @@ class SignUpFragment : Fragment() {
     }
 
     private fun signuplistner() {
-        val name: String = binding.nameEdittext.text.toString().trim { it <= ' ' }
+        val fi_name: String = binding.firstNameEdittext.text.toString().trim { it <= ' ' }
+        val la_name: String = binding.lastNameEdittext.text.toString().trim { it <= ' ' }
         val email: String = binding.emailEdittext.text.toString().trim { it <= ' ' }
         val password: String = binding.passwordEdittext.text.toString().trim { it <= ' ' }
         when {
-            TextUtils.isEmpty(name) -> viewModel.showToast("fill Name field!!")
+            TextUtils.isEmpty(fi_name) -> viewModel.showToast("fill First Name field!!")
+            TextUtils.isEmpty(la_name) -> viewModel.showToast("fill Last Name field!!")
             TextUtils.isEmpty(email) -> viewModel.showToast("fill Email field!!")
             TextUtils.isEmpty(password) -> viewModel.showToast("fill Password field!!")
             RuleName?.isEmpty()!! -> viewModel.showToast("Choose Your rule in E7lm Team!!")
             CommitteName?.isEmpty()!! -> viewModel.showToast("Choose Your committee in E7lm Team!!")
             else -> {
-                val user = User(name, email, password, RuleName, CommitteName)
+                val user = User(fi_name,la_name, email, password, RuleName, CommitteName)
                 viewModel.signUp(user)
             }
         }

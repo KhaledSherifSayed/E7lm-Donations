@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">E7lm Donations</string>
     <string name="title_activity_circle_members_map">Map</string>
-    <string name="name">Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">log in</string>
